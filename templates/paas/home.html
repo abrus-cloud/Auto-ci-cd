@@ -1,0 +1,17 @@
+{% extends 'adminlte/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <div class="text-center">
+    App Platform
+    </div>
+{% endblock %}
+{% block main %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="container">
+        {{ form|crispy}}
+        <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'Make_API/index.html' %}
+
+{% block title %}
+    <title>Profile</title>
+{% endblock %}
+{% block body %}
+    <div class="container">
+    <h1>Your Profile</h1>
+    <ul>
+        <li class="list-group-item list-group-item-action active"> User: {{ user.username }} </li>
+        <li class="list-group-item list-group-item-action active"> Email: {{ user.email }} </li>
+        <li class="list-group-item list-group-item-action active"> First Name: {{ user.first_name }} </li>
+        <li class="list-group-item list-group-item-action active"> Last Name: {{ user.last_name }} </li>
+    </ul>
+{% endblock %}
+</div>
