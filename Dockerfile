@@ -6,11 +6,12 @@ ENV PYTHONUNBUFFERED 1
 
 RUN pip install --upgrade pip
 
+WORKDIR /app
+
 COPY req.txt /app
 
 COPY . /app
 
-WORKDIR /app
 
 
 RUN pip install -r req.txt
