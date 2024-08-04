@@ -2,10 +2,10 @@
 FROM python:3.10
 
 
-USER python
+USER www-data
 
 # set work directory
-WORKDIR /home/python
+WORKDIR /app
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -13,11 +13,11 @@ ENV PYTHONUNBUFFERED 1
 
 # install dependencies
 RUN pip install --upgrade pip
-COPY --chown=python:python req.txt /app
+COPY --chown=www-data:www-data req.txt /app
 RUN pip install -r req.txt
 
 # copy project
-COPY --chown=python:python . /home/python
+COPY --chown=www-data:www-data . /app
 
 
 #EXPOSE 8000
