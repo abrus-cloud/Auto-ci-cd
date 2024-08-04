@@ -25,6 +25,6 @@ build:
     - docker:20.10.16-dind
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker build -t $CI_REGISTRY/yashar-ansary/cloud-panel/image:latest .
-    - docker push $CI_REGISTRY/cloud-panel/image:latest
+    - docker build -t $CI_REGISTRY/yashar-ansary/cloud-panel/v1:latest .
+    - docker push $CI_REGISTRY/yashar-ansary/cloud-panel/v1:latest
 
