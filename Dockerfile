@@ -1,10 +1,13 @@
 # pull the official base image
 FROM python:3.10
 
+
+#RUN adduser -D django
+USER django
+
 # set work directory
 WORKDIR /app
-RUN adduser -D django
-USER django
+
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
