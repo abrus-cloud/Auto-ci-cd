@@ -2,8 +2,6 @@
 FROM python:3.10
 
 
-RUN groupadd -g 999 python && \
-    useradd -r -u 999 -g python python
 USER python
 
 # set work directory
@@ -15,11 +13,11 @@ ENV PYTHONUNBUFFERED 1
 
 # install dependencies
 RUN pip install --upgrade pip
-COPY req.txt /app
+COPY --chown=python:python req.txt /app
 RUN pip install -r req.txt
 
 # copy project
-COPY . /home/python
+COPY --chown=python:python . /home/python
 
 
 #EXPOSE 8000
