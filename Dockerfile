@@ -2,8 +2,9 @@
 FROM python:3.10
 
 
-#RUN adduser -D django
-USER django
+RUN groupadd -g 999 python && \
+    useradd -r -u 999 -g python python
+USER 999
 
 # set work directory
 WORKDIR /app
