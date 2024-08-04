@@ -4,7 +4,7 @@ FROM python:3.10
 
 RUN groupadd -g 999 python && \
     useradd -r -u 999 -g python python
-USER 999
+USER python
 
 # set work directory
 WORKDIR /app
