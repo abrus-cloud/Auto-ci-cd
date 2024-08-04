@@ -7,7 +7,7 @@ RUN groupadd -g 999 python && \
 USER python
 
 # set work directory
-WORKDIR /app
+WORKDIR /home/python
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -19,7 +19,7 @@ COPY req.txt /app
 RUN pip install -r req.txt
 
 # copy project
-COPY . /app
+COPY . /home/python
 
 
 #EXPOSE 8000
