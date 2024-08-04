@@ -8,11 +8,12 @@ RUN pip install --upgrade pip
 
 COPY req.txt /app
 
-RUN pip install -r req.txt
-
 COPY . /app
 
 WORKDIR /app
+
+
+RUN pip install -r req.txt
 
 #EXPOSE 8000
 
