@@ -1,6 +1,13 @@
 # pull the official base image
 FROM python:3.10
 
+
+
+RUN groupadd -g 1234 django && \
+    useradd -m -u 1234 -g django django
+USER django
+
+
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
