@@ -8,7 +8,7 @@ RUN groupadd -g 1234 django && \
 USER django
 
 
-ENV PYTHONPATH=/home/django/.local/bin
+ENV PATH=/home/django/.local/bin
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
