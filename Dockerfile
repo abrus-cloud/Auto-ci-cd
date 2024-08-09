@@ -1,5 +1,5 @@
 # pull the official base image
-FROM repo.abrus.org:5050/root/k8s-data/python:3.10
+FROM python:3.10
 
 RUN groupadd -g 1234 django && \
     useradd -m -u 1234 -g django django
