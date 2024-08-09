@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-app-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django-application
+  template:
+    metadata:
+      labels:
+        app: django-application
+    spec:
+      containers:
+        - image: repo.abrus.org:5050/root/k8s-data/image:290eeb25
+          imagePullPolicy: Always
+          name: django-app-container
+          envFrom:
+            - configMapRef:
+                name: app-cm
+          ports:
+            - containerPort: 8000
+      imagePullSecrets:
+      - name: regcred

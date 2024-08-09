@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-cm
+data:
+  MYSQL_ROOT_PASSWORD: "-root-password"
+  MYSQL_DATABASE: "mysql-database"
+  MYSQL_USER: "mysql-username"
+  MYSQL_PASSWORD: "mysql-password"
+  DB_HOST: "mysql-service"
