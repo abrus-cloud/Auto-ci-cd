@@ -24,7 +24,7 @@ deploy:
   script:
     - kubectl config get-contexts
     - kubectl config use-context $KUBE_CONTEXT
-    - kubectl apply -f $CI_PROJECT_DRI/CD/.
+    - kubectl apply -f $CI_PROJECT_DIR/CD/.
 
 
     
