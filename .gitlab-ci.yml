@@ -21,6 +21,20 @@ stages:
 #     - docker build -t $CI_RESIGTRY2:$CI_REGISTRY_PORT/v1:$CI_COMMIT_SHORT_SHA .
 #     - docker push $CI_RESIGTRY2:$CI_REGISTRY_PORT/v1:$CI_COMMIT_SHORT_SHA
 
+
+build:
+  image: docker
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/root/k8s-data/image:$CI_COMMIT_SHORT_SHA .
+    - docker push $CI_REGISTRY/root/k8s-data/image:$CI_COMMIT_SHORT_SHA
+
+
+
+
 deploy:
   image:
     name: bitnami/kubectl:latest
