@@ -2,7 +2,8 @@ stages:
   - build
   - test
   - deploy
-
+variables:
+  DOCKER_HOST: tcp://docker:2376
 
 # build:
 #   image: $CI_RESIGTRY2:$CI_REGISTRY_PORT/docker:20.10.16
