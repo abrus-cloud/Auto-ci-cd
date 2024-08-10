@@ -15,11 +15,7 @@ spec:
       containers:
         - image: repo.abrus.org:5050/root/k8s-data/image:290eeb25
           imagePullPolicy: Always
-          name: django-app-container
-          command: ["/bin/bash"]
-          args:
-          - "-c"
-          - "python manage.py migrate"          
+          name: django-app-container         
           envFrom:
             - configMapRef:
                 name: app-cm
